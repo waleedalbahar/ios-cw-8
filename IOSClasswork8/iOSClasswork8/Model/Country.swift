@@ -21,7 +21,7 @@ struct City{
     
     func remarkablePlaceImage () -> UIImage
     {
-        let remarkablePlaceName = "\(name) 1"
+        let remarkablePlaceName = "\(name)1"
         return UIImage(named: remarkablePlaceName)!
     }
     

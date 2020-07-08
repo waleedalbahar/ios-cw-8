@@ -16,22 +16,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="5sx-zJ-5i0" rowHeight="53" style="IBUITableViewCellStyleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="8aK-6q-AcS" customClass="customCell" customModule="iOSClaswork8" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="173" translatesAutoresizingMaskIntoConstraints="NO" id="8aK-6q-AcS" customClass="CityViewCell" customModule="iOSClaswork8" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="8aK-6q-AcS" id="u8H-Ug-k9D">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="173"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5sx-zJ-5i0">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="53"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="الرياض" translatesAutoresizingMaskIntoConstraints="NO" id="Uy0-Px-ole">
+                                            <rect key="frame" x="20" y="7" width="334" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1d5-KE-WVX">
+                                            <rect key="frame" x="27" y="93" width="327" height="69"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cardImg" destination="Uy0-Px-ole" id="0yu-C9-tbW"/>
+                                    <outlet property="cardLabel" destination="1d5-KE-WVX" id="JII-2k-iqO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,7 +54,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Up8-uF-Zg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="49.50738916256158"/>
+            <point key="canvasLocation" x="858" y="50"/>
         </scene>
         <!--تفاصيل الطقس-->
         <scene sceneID="69B-0o-m3E">
@@ -67,8 +75,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المدينة..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU6-vC-Txf">
-                                <rect key="frame" x="29.000000000000007" y="631.33333333333337" width="104.66666666666669" height="43.666666666666629"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="المدينة..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU6-vC-Txf">
+                                <rect key="frame" x="16" y="631" width="167" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -113,8 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="تفاصيل الطقس" id="gdg-iT-WhJ"/>
                     <connections>
-                        <outlet property="cityImageView" destination="kJd-64-udk" id="MLx-IR-iQC"/>
-                        <outlet property="cityNameLabel" destination="Xyu-Yy-EoK" id="1Ao-Ek-Sr7"/>
+                        <outlet property="cityNameLabel" destination="HU6-vC-Txf" id="XEQ-tb-ms2"/>
                         <outlet property="currentTemp" destination="Xyu-Yy-EoK" id="Igt-vI-Bn5"/>
                         <outlet property="maxTemp" destination="K3n-8T-LIh" id="zhV-Fy-sq9"/>
                         <outlet property="minTemp" destination="wtH-Kx-esi" id="gAK-qn-06x"/>
@@ -123,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Did-BQ-HVN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="49.50738916256158"/>
+            <point key="canvasLocation" x="1624.8" y="49.50738916256158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CLf-i1-p6Z">
@@ -144,4 +151,7 @@
             <point key="canvasLocation" x="-31.884057971014496" y="50.892857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="الرياض" width="1029" height="369"/>
+    </resources>
 </document>
